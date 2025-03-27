@@ -7,7 +7,7 @@ const passport = require('passport');
 module.exports = (app) => {
   // Enable Cross-Origin Resource Sharing (CORS)
   app.use(cors({
-    origin: ['http://localhost:5173', 'https://ed3f-82-17-235-177.ngrok-free.app'],
+    origin: ['http://localhost:5173', 'https://fd2e-82-17-235-177.ngrok-free.app'],
     credentials: true
   }));
 

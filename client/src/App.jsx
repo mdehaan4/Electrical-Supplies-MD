@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
-import Products from './components/Products';
+import ProductList from './components/ProductList';
+import ProductDetails from './routes/ProductDetails';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard'; // ✅ Import Dashboard
@@ -19,19 +20,28 @@ function App() {
       {/* ✅ Navigation links */}
       <nav>
         <Link to="/">Home</Link> | 
-        <Link to="/Products">Products</Link> | 
-        <Link to="/Register">Register</Link> | 
-        <Link to="/Login">Login</Link> | 
-        <Link to="/Dashboard">Dashboard</Link> 
+        <Link to="/products">Products</Link> | 
+        <Link to="/register">Register</Link> | 
+        <Link to="/login">Login</Link> | 
+        <Link to="/dashboard">Dashboard</Link> |
+        {/* Example category links */}
+        <Link to={`/category/${encodeURIComponent('dj controllers')}`}>DJ Controllers</Link> | 
+        <Link to={`/category/${encodeURIComponent('dj booth')}`}>DJ Booths</Link> | 
+        <Link to={`/category/${encodeURIComponent('lights')}`}>Lights</Link> | 
+<       Link to={`/category/${encodeURIComponent('speakers')}`}>Speakers</Link>
+
       </nav>
 
       {/* ✅ Define routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Products" element={<Products />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Dashboard" element={<Dashboard />} /> {/* ✅ Dashboard route */}
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:productId" element={<ProductDetails />} /> {/* Display specific product details */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* ✅ Dashboard route */}
+        {/* Category route */}
+        <Route path="/category/:category" element={<ProductList />} /> {/* Fetch products by category */}
       </Routes>
     </div>
   );

@@ -7,7 +7,7 @@ function Login() {
 
   //  Check if user is authenticated when component mounts
   useEffect(() => {
-    fetch('https://ed3f-82-17-235-177.ngrok-free.app/auth/me', {
+    fetch('https://https://fd2e-82-17-235-177.ngrok-free.app/auth/me', {
       method: 'GET',
       credentials: 'include', // ✅ Important for cookies
     })
@@ -93,7 +93,7 @@ function Login() {
       </form>
 
       <div style={{ marginTop: '20px' }}>
-        <button onClick={() => window.location.href = 'https://ed3f-82-17-235-177.ngrok-free.app/auth/google'}>
+        <button onClick={() => window.location.href = 'https://fd2e-82-17-235-177.ngrok-free.app/auth/google'}>
           Login with Google
         </button>
         <button onClick={() => window.location.href = 'http://localhost:4000/auth/facebook'}>
